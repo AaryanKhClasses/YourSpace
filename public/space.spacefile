@@ -1,0 +1,10 @@
+// DO NOT modify the contents of this file. It WILL corrupt your space.
+
+start spacefile "0.1.0"
+modules ["spacefile"]
+
+module "spacefile":
+- spaceName: "Default Space"
+- firstLaunch
+
+end spacefile
