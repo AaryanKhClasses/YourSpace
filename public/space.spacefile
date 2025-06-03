@@ -5,6 +5,5 @@ modules ["spacefile"]
 
 module "spacefile":
 - spaceName: "Default Space"
-- firstLaunch
 
 end spacefile
