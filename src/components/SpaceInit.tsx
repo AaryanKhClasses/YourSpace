@@ -3,7 +3,7 @@
 import { Button } from "@heroui/react"
 import { version } from "@/../package.json"
 import { useState } from "react"
-import Settings from "@/plugins/Settings"
+import loadPlugins from "@/loadPlugins"
 
 export default function SpaceInit() {
     // File Handling Functions
@@ -62,7 +62,7 @@ export default function SpaceInit() {
         </div>
         {load ? <div className="h-screen p-2 m-2 bg-[#c55850] rounded-lg w-full">
             <div className="flex flex-col w-fit items-center justify-center text-center">
-                <Settings fileHandle={fileHandle!} />
+                {loadPlugins(fileHandle!)}
             </div>
         </div> : null}
     </div>
