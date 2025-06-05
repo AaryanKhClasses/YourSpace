@@ -28,9 +28,11 @@ export default function SpaceInit() {
             let lines = _text.split('\n')
             setFileHandle(fileHandler)
 
+            console.log(lines)
+
             if(!(_file &&
-                lines[0] === "// DO NOT modify the contents of this file. It WILL corrupt your space.\r" &&
-                lines[1] === "\r" &&
+                lines[0].startsWith("// DO NOT modify the contents of this file. It WILL corrupt your space.") &&
+                lines[1].startsWith("") &&
                 lines[2].startsWith("start spacefile ") &&
                 lines[lines.length - 1] === "end spacefile"
             )) return alert('Your .spacefile is corrupted.')
@@ -61,7 +63,7 @@ export default function SpaceInit() {
             <input type="text" onClick={handleUploadFile} value={fileName} disabled className="cursor-pointer h-12 w-full px-4 bg-[#2C3441] text-[#A0AEC0] text-base border-none rounded-r-lg focus:outline-none" style={{ borderTopLeftRadius: 0, borderBottomLeftRadius: 0 }} placeholder="No file chosen"/>
         </div>
         {load ? <div className="h-screen p-2 m-2 bg-[#c55850] rounded-lg w-full">
-            <div className="flex flex-col w-fit items-center justify-center text-center">
+            <div className="flex flex-col w-fit items-center justify-center text-center gap-2">
                 {loadPlugins(fileHandle!)}
             </div>
         </div> : null}

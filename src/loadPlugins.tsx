@@ -1,7 +1,9 @@
 import { ReactElement } from "react"
 import * as Settings from "@/plugins/Settings"
+import * as Notes from "@/plugins/Notes"
 
-const plugins = [Settings]
+const plugins = [Settings, Notes]
+export const pluginNames = ['Notes']
 
 export default function loadPlugins(fileHandle: FileSystemFileHandle, props?: any): ReactElement[] {
     return plugins.map((plugin, idx) => {
